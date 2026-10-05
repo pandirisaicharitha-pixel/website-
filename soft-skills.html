@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Readiness System | Soft Skills Training</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="soft-skills">
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+
+  <header class="topbar glass">
+    <div class="brand">
+      <div class="brand-badge">CRS</div>
+      <div>
+        <h1>Career Readiness System</h1>
+        <p>Soft skills training with guided practice and progress tracking</p>
+      </div>
+    </div>
+    <div class="auth-actions" id="authActions"></div>
+  </header>
+
+  <main class="layout">
+    <nav class="page-nav glass">
+      <a href="analysis.html">Skill Extraction</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="career.html">Career & Interview</a>
+      <a href="gd.html">GD Practice</a>
+      <a href="resume-workshop.html">Resume Workshop</a>
+      <a href="soft-skills.html" class="active">Soft Skills</a>
+    </nav>
+
+    <section class="panel glass">
+      <div class="grid-3" id="softSkillModuleCards"></div>
+
+      <div class="grid-2">
+        <article class="card">
+          <h2>Course Content</h2>
+          <p class="feature-note" id="softSkillOverview">Choose a module to see its videos, notes, and exercises.</p>
+
+          <div class="soft-skill-block">
+            <h3>Videos</h3>
+            <ul class="compact-list" id="softSkillVideos"></ul>
+          </div>
+
+          <div class="soft-skill-block">
+            <h3>Notes</h3>
+            <ul class="compact-list" id="softSkillNotes"></ul>
+          </div>
+
+          <div class="soft-skill-block">
+            <h3>Exercises</h3>
+            <ul class="compact-list" id="softSkillExercises"></ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Practice Activities</h2>
+          <label>Training Section
+            <select id="softSkillModuleSelect"></select>
+          </label>
+          <label>Practice Activity
+            <select id="softSkillActivitySelect"></select>
+          </label>
+          <div class="template-block">
+            <p><strong>Prompt</strong>: <span id="softSkillPrompt">Select an activity to begin.</span></p>
+            <p><strong>Timer Goal</strong>: <span id="softSkillTimerGoal">60 seconds</span></p>
+          </div>
+          <div class="speech-actions">
+            <button type="button" id="softSkillStartTimerBtn">Start Practice</button>
+            <button type="button" id="softSkillVoiceBtn">Voice Input</button>
+          </div>
+          <p class="feature-note">Practice Timer: <span id="softSkillTimer">03:00</span></p>
+          <label>Your Response
+            <textarea id="softSkillResponse" rows="8" placeholder="Speak or type your answer here..."></textarea>
+          </label>
+          <div class="speech-actions">
+            <button type="button" id="softSkillEvaluateBtn">Evaluate Response</button>
+          </div>
+          <p class="msg" id="softSkillsMsg"></p>
+        </article>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <h2>AI Evaluation</h2>
+          <div class="admin-metrics soft-skill-metrics">
+            <div class="metric-card">
+              <span class="metric-label">Speech Clarity</span>
+              <strong id="softSkillClarityScore">0</strong>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Tone</span>
+              <strong id="softSkillToneScore">0</strong>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Response Quality</span>
+              <strong id="softSkillQualityScore">0</strong>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Overall Score</span>
+              <strong id="softSkillOverallScore">0 / 100</strong>
+            </div>
+          </div>
+          <div class="template-block">
+            <p><strong>Latest Evaluation</strong></p>
+            <ul id="softSkillSuggestions">
+              <li>Complete a practice activity to see suggestions.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Progress Tracking</h2>
+          <div class="template-block">
+            <p><strong>Completed Modules</strong>: <span id="softSkillCompletedCount">0</span></p>
+            <p><strong>Total Practice Attempts</strong>: <span id="softSkillAttemptCount">0</span></p>
+            <p><strong>Latest Module</strong>: <span id="softSkillLatestModule">-</span></p>
+          </div>
+          <div class="progress-shell">
+            <div class="progress-bar" id="softSkillProgressBar"></div>
+          </div>
+          <p class="feature-note" id="softSkillProgressText">0% completed</p>
+          <div class="template-block">
+            <p><strong>Completed Sections</strong></p>
+            <div class="chips" id="softSkillCompletedModules"></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

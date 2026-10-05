@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Readiness System | Sign Up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="signup">
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+
+  <header class="topbar glass">
+    <div class="brand">
+      <div class="brand-badge">CRS</div>
+      <div>
+        <h1>Career Readiness System</h1>
+        <p>Create your account to access resume intelligence and career planning</p>
+      </div>
+    </div>
+    <div class="auth-actions" id="authActions"></div>
+  </header>
+
+  <main class="layout">
+    <section class="panel glass hero-panel">
+      <div class="hero-copy">
+        <p class="eyebrow">Create Account</p>
+        <h2>Sign up once, then log in to continue with resume analysis.</h2>
+        <p class="hero-text">New accounts are created as regular users. Admin access is available only for existing admin accounts.</p>
+      </div>
+    </section>
+
+    <section class="panel glass">
+      <div class="auth-shell">
+        <form id="registerForm" class="card auth-card">
+          <h3>Sign Up</h3>
+          <label>Email
+            <input type="email" id="regEmail" required />
+          </label>
+          <label>Password
+            <input type="password" id="regPass" required minlength="6" />
+          </label>
+          <label>Sign Up As
+            <select id="regRole" required>
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
+          </label>
+          <button type="submit">Create Account</button>
+        </form>
+      </div>
+      <p class="auth-switch">Already have an account? <a href="index.html">Login</a></p>
+      <p class="msg" id="authMsg"></p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

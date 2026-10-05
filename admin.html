@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Readiness System | Admin Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="admin">
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+
+  <header class="topbar glass">
+    <div class="brand">
+      <div class="brand-badge">CRS</div>
+      <div>
+        <h1>Career Readiness System</h1>
+        <p>Admin dashboard for platform configuration and monitoring</p>
+      </div>
+    </div>
+    <div class="auth-actions" id="authActions"></div>
+  </header>
+
+  <main class="layout">
+    <nav class="page-nav glass">
+      <a href="admin.html" class="active">Admin Dashboard</a>
+      <a href="gd-admin.html">GD Management</a>
+      <a href="resume-admin.html">Resume Workshop</a>
+      <a href="softskills-admin.html">Soft Skills</a>
+    </nav>
+
+    <section class="panel glass">
+      <div class="grid-2">
+        <article class="card">
+          <h2>Admin Session</h2>
+          <p id="adminSessionText">Signed in as administrator.</p>
+        </article>
+        <article class="card">
+          <h2>Platform Summary</h2>
+          <div class="admin-metrics">
+            <div class="metric-card">
+              <span class="metric-label">Job Roles</span>
+              <strong id="roleCount">0</strong>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Skills</span>
+              <strong id="skillCount">0</strong>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Courses</span>
+              <strong id="courseCount">0</strong>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label">Users</span>
+              <strong id="userCount">0</strong>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="grid-3">
+        <article class="card feature-card">
+          <h2>GD Management</h2>
+          <p>Manage GD topics, configure feedback rules, monitor active sessions, and review user responses.</p>
+          <a class="feature-link" href="gd-admin.html">Open GD Management</a>
+        </article>
+        <article class="card feature-card">
+          <h2>Resume Workshop</h2>
+          <p>Manage templates, sample resumes, ATS keyword data, required sections, and scoring rules.</p>
+          <a class="feature-link" href="resume-admin.html">Open Resume Workshop</a>
+        </article>
+        <article class="card feature-card">
+          <h2>Soft Skills</h2>
+          <p>Maintain training materials, exercises, and user progress monitoring for soft skills practice.</p>
+          <a class="feature-link" href="softskills-admin.html">Open Soft Skills</a>
+        </article>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <h2>Manage Job Roles</h2>
+          <form id="adminRoleForm">
+            <label>Job Role
+              <input type="text" id="newRoleName" placeholder="e.g., DevOps Engineer" required />
+            </label>
+            <label>Required Skills
+              <input type="text" id="newRoleSkills" placeholder="Docker, Kubernetes, CI/CD" required />
+            </label>
+            <button type="submit">Save Role</button>
+          </form>
+          <div id="adminRoleList" class="admin-list"></div>
+        </article>
+
+        <article class="card">
+          <h2>Update Skill Database</h2>
+          <form id="skillCatalogForm">
+            <label>New Skill
+              <input type="text" id="newSkillName" placeholder="e.g., terraform" required />
+            </label>
+            <button type="submit">Add Skill</button>
+          </form>
+          <div id="skillCatalogList" class="admin-list chip-list"></div>
+        </article>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <h2>Manage Course Content & Learning Resources</h2>
+          <form id="courseForm">
+            <label>Skill
+              <input type="text" id="courseSkill" placeholder="e.g., Docker" required />
+            </label>
+            <label>Course or Resource Title
+              <input type="text" id="courseTitle" placeholder="e.g., Docker Fundamentals" required />
+            </label>
+            <button type="submit">Save Course</button>
+          </form>
+          <div id="courseList" class="admin-list"></div>
+        </article>
+
+        <article class="card">
+          <h2>Add & Manage Interview Questions</h2>
+          <form id="questionForm">
+            <label>Role
+              <select id="questionRole"></select>
+            </label>
+            <label>Interview Question
+              <textarea id="questionText" rows="4" placeholder="Enter a question for the selected role..." required></textarea>
+            </label>
+            <button type="submit">Add Question</button>
+          </form>
+          <div id="questionList" class="admin-list"></div>
+        </article>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <h2>Update Industry Trends & Skill Demand</h2>
+          <form id="trendForm">
+            <label>Trending Skill
+              <input type="text" id="trendSkill" placeholder="e.g., Edge AI" required />
+            </label>
+            <button type="submit">Add Trend</button>
+          </form>
+          <div id="trendList" class="admin-list chip-list"></div>
+        </article>
+
+        <article class="card">
+          <h2>Monitor User Activity & Progress</h2>
+          <div id="userActivityList" class="admin-table-wrap"></div>
+        </article>
+      </div>
+
+      <p class="msg" id="adminMsg"></p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Readiness System | Group Discussion Practice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="gd">
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+
+  <header class="topbar glass">
+    <div class="brand">
+      <div class="brand-badge">CRS</div>
+      <div>
+        <h1>Career Readiness System</h1>
+        <p>Group discussion practice to improve communication and clarity</p>
+      </div>
+    </div>
+    <div class="auth-actions" id="authActions"></div>
+  </header>
+
+  <main class="layout">
+    <nav class="page-nav glass">
+      <a href="analysis.html">Skill Extraction</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="career.html">Career & Interview</a>
+      <a href="gd.html" class="active">GD Practice</a>
+      <a href="resume-workshop.html">Resume Workshop</a>
+      <a href="soft-skills.html">Soft Skills</a>
+    </nav>
+
+    <section class="panel glass">
+      <div class="grid-2">
+        <article class="card">
+          <h2>Join Group Discussion</h2>
+          <label>Select Topic
+            <select id="gdTopicSelect"></select>
+          </label>
+          <div class="speech-actions">
+            <button type="button" id="joinGdBtn">Join GD</button>
+            <div class="timer-badge" id="gdTimer">08:00</div>
+          </div>
+          <p id="gdTopicText">Choose a topic and join the GD session.</p>
+          <p class="msg" id="gdMsg"></p>
+        </article>
+        <article class="card">
+          <h2>AI Discussion Chat</h2>
+          <div id="gdChat" class="chat-box">
+            <p class="chat-empty">Join a session to start the discussion.</p>
+          </div>
+          <label>Your response
+            <textarea id="gdNotes" rows="6" placeholder="Write your response here..." disabled></textarea>
+          </label>
+          <div class="speech-actions">
+            <button type="button" id="gdSubmitBtn" disabled>Submit Response</button>
+            <button type="button" id="gdVoiceBtn" class="secondary-btn" disabled>Voice Input</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h2>Opening Tips</h2>
+          <ul>
+            <li>Start with a clear one-line position.</li>
+            <li>Define the topic before giving examples.</li>
+            <li>Keep your opening under 30 seconds.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>During Discussion</h2>
+          <ul>
+            <li>Agree or disagree respectfully.</li>
+            <li>Support points with one example.</li>
+            <li>Invite others into the conversation.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Closing Tips</h2>
+          <ul>
+            <li>Summarize the strongest point.</li>
+            <li>Avoid repeating every argument.</li>
+            <li>End with a balanced conclusion.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h2>Feedback Score</h2>
+          <p class="score" id="gdScore">0 / 100</p>
+          <p><strong>Grammar:</strong> <span id="gdGrammarScore">0</span> / 30</p>
+          <p><strong>Relevance:</strong> <span id="gdRelevanceScore">0</span> / 50</p>
+          <p><strong>Sentiment:</strong> <span id="gdSentiment">-</span></p>
+        </article>
+        <article class="card">
+          <h2>Suggestions</h2>
+          <ul id="gdSuggestions">
+            <li>Join a session and submit your response to get feedback.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Session Output</h2>
+          <p id="gdOutputText">Your GD score and suggestions will appear here after you submit a response.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

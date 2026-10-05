@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Readiness System | Resume Workshop Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="resume-admin">
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+
+  <header class="topbar glass">
+    <div class="brand">
+      <div class="brand-badge">CRS</div>
+      <div>
+        <h1>Career Readiness System</h1>
+        <p>Admin controls for resume workshop templates and ATS rules</p>
+      </div>
+    </div>
+    <div class="auth-actions" id="authActions"></div>
+  </header>
+
+  <main class="layout">
+    <nav class="page-nav glass">
+      <a href="admin.html">Admin Dashboard</a>
+      <a href="gd-admin.html">GD Management</a>
+      <a href="resume-admin.html" class="active">Resume Workshop</a>
+      <a href="softskills-admin.html">Soft Skills</a>
+    </nav>
+
+    <section class="panel glass">
+      <div class="grid-2">
+        <article class="card">
+          <h2>Resume-Building Workshop Admin</h2>
+          <form id="resumeWorkshopAdminForm">
+            <label>Resume Templates
+              <textarea id="resumeTemplateNames" rows="4" placeholder="Modern&#10;Classic&#10;Compact"></textarea>
+            </label>
+            <label>Sample Resumes
+              <textarea id="sampleResumeTitles" rows="4" placeholder="Software Developer Sample&#10;Data Analyst Sample"></textarea>
+            </label>
+            <label>Required Sections
+              <input type="text" id="resumeRequiredSections" placeholder="Skills, Projects, Experience" />
+            </label>
+            <label>ATS Keyword Database
+              <textarea id="resumeKeywordDatabase" rows="4" placeholder="Java&#10;Python&#10;REST APIs"></textarea>
+            </label>
+            <div class="grid-3">
+              <label>Format Score %
+                <input type="number" id="resumeFormatWeight" min="0" max="100" />
+              </label>
+              <label>Content Score %
+                <input type="number" id="resumeContentWeight" min="0" max="100" />
+              </label>
+              <label>Keywords Score %
+                <input type="number" id="resumeKeywordsWeight" min="0" max="100" />
+              </label>
+            </div>
+            <button type="submit">Save Resume Workshop Settings</button>
+          </form>
+        </article>
+
+        <article class="card">
+          <h2>Resume Workshop Summary</h2>
+          <div id="resumeWorkshopAdminSummary" class="admin-list"></div>
+        </article>
+      </div>
+
+      <p class="msg" id="adminMsg"></p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

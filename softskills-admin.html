@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Readiness System | Soft Skills Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="softskills-admin">
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+
+  <header class="topbar glass">
+    <div class="brand">
+      <div class="brand-badge">CRS</div>
+      <div>
+        <h1>Career Readiness System</h1>
+        <p>Admin controls for soft skills content and progress monitoring</p>
+      </div>
+    </div>
+    <div class="auth-actions" id="authActions"></div>
+  </header>
+
+  <main class="layout">
+    <nav class="page-nav glass">
+      <a href="admin.html">Admin Dashboard</a>
+      <a href="gd-admin.html">GD Management</a>
+      <a href="resume-admin.html">Resume Workshop</a>
+      <a href="softskills-admin.html" class="active">Soft Skills</a>
+    </nav>
+
+    <section class="panel glass">
+      <div class="grid-2">
+        <article class="card">
+          <h2>Soft Skills Training Admin</h2>
+          <form id="softSkillsAdminForm">
+            <label>Training Module
+              <select id="softSkillsAdminModule"></select>
+            </label>
+            <label>Module Title
+              <input type="text" id="softSkillsAdminTitle" placeholder="Communication" />
+            </label>
+            <label>Overview
+              <textarea id="softSkillsAdminOverview" rows="3" placeholder="Short summary for this training section"></textarea>
+            </label>
+            <label>Videos
+              <textarea id="softSkillsAdminVideos" rows="4" placeholder="One video title per line"></textarea>
+            </label>
+            <label>Notes
+              <textarea id="softSkillsAdminNotes" rows="4" placeholder="One note per line"></textarea>
+            </label>
+            <label>Practice Questions / Exercises
+              <textarea id="softSkillsAdminExercises" rows="6" placeholder="Introduce yourself | Introduce yourself in a confident and professional way. | 180&#10;Tell me about a challenge | Describe a challenge you faced and how you handled it. | 180"></textarea>
+            </label>
+            <button type="submit">Save Soft Skills Module</button>
+          </form>
+        </article>
+
+        <article class="card">
+          <h2>Soft Skills Progress Monitoring</h2>
+          <div id="softSkillsProgressAdmin" class="admin-list"></div>
+        </article>
+      </div>
+
+      <p class="msg" id="adminMsg"></p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

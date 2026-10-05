@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Readiness System | GD Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="gd-admin">
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+
+  <header class="topbar glass">
+    <div class="brand">
+      <div class="brand-badge">CRS</div>
+      <div>
+        <h1>Career Readiness System</h1>
+        <p>Admin controls for group discussion practice</p>
+      </div>
+    </div>
+    <div class="auth-actions" id="authActions"></div>
+  </header>
+
+  <main class="layout">
+    <nav class="page-nav glass">
+      <a href="admin.html">Admin Dashboard</a>
+      <a href="gd-admin.html" class="active">GD Management</a>
+      <a href="resume-admin.html">Resume Workshop</a>
+      <a href="softskills-admin.html">Soft Skills</a>
+    </nav>
+
+    <section class="panel glass">
+      <div class="grid-2">
+        <article class="card">
+          <h2>Group Discussion Practice Management</h2>
+          <form id="gdTopicForm">
+            <input type="hidden" id="gdTopicId" />
+            <label>GD Topic Title
+              <input type="text" id="gdTopicTitle" placeholder="e.g., AI in Education" required />
+            </label>
+            <label>Difficulty
+              <select id="gdTopicDifficulty">
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+              </select>
+            </label>
+            <label>Discussion Prompt
+              <textarea id="gdTopicPrompt" rows="4" placeholder="Enter the GD prompt..." required></textarea>
+            </label>
+            <label>Time Limit In Seconds
+              <input type="number" id="gdTopicDuration" min="60" step="30" placeholder="480" required />
+            </label>
+            <button type="submit">Save GD Topic</button>
+          </form>
+          <div id="gdTopicList" class="admin-list"></div>
+        </article>
+
+        <article class="card">
+          <h2>GD Feedback Controls</h2>
+          <form id="gdConfigForm">
+            <label>Default Discussion Time Limit
+              <input type="number" id="gdConfigDuration" min="60" step="30" required />
+            </label>
+            <label>Grammar Weight
+              <input type="number" id="gdGrammarWeight" min="0" max="100" required />
+            </label>
+            <label>Relevance Score Weight
+              <input type="number" id="gdRelevanceWeight" min="0" max="100" required />
+            </label>
+            <label>Confidence Score Weight
+              <input type="number" id="gdConfidenceWeight" min="0" max="100" required />
+            </label>
+            <button type="submit">Save GD Settings</button>
+          </form>
+        </article>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <h2>Monitor Active GD Sessions</h2>
+          <div id="gdSessionList" class="admin-list"></div>
+        </article>
+
+        <article class="card">
+          <h2>View User GD Responses</h2>
+          <div id="gdResponseList" class="admin-list"></div>
+        </article>
+      </div>
+
+      <p class="msg" id="adminMsg"></p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

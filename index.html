@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Readiness System | Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="auth">
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+
+  <header class="topbar glass">
+    <div class="brand">
+      <div class="brand-badge">CRS</div>
+      <div>
+        <h1>Career Readiness System</h1>
+        <p>Secure access for resume intelligence and career planning</p>
+      </div>
+    </div>
+    <div class="auth-actions" id="authActions"></div>
+  </header>
+
+  <main class="layout">
+    <section class="panel glass hero-panel">
+      <div class="hero-copy">
+        <p class="eyebrow">Three-step workflow</p>
+        <h2>Login first, extract skills second, build your roadmap third.</h2>
+        <p class="hero-text">This version separates authentication, resume analysis, and personalized development guidance into dedicated pages.</p>
+      </div>
+    </section>
+
+    <section class="panel glass">
+      <div class="auth-shell">
+        <form id="loginForm" class="card auth-card">
+          <h3>Login</h3>
+          <label>Email
+            <input type="email" id="logEmail" required />
+          </label>
+          <label>Password
+            <input type="password" id="logPass" required />
+          </label>
+          <label>Login As
+            <select id="loginRole" required>
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
+          </label>
+          <button type="submit">Sign In</button>
+        </form>
+      </div>
+      <p class="auth-switch">If you don't have an account? <a href="signup.html">Sign up</a></p>
+      <p class="msg" id="authMsg"></p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

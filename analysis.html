@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Readiness System | Skill Extraction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="analysis">
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+
+  <header class="topbar glass">
+    <div class="brand">
+      <div class="brand-badge">CRS</div>
+      <div>
+        <h1>Career Readiness System</h1>
+        <p>Skill extraction and match analysis</p>
+      </div>
+    </div>
+    <div class="auth-actions" id="authActions"></div>
+  </header>
+
+  <main class="layout">
+    <nav class="page-nav glass">
+      <a href="analysis.html" class="active">Skill Extraction</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="career.html">Career & Interview</a>
+      <a href="gd.html">GD Practice</a>
+      <a href="resume-workshop.html">Resume Workshop</a>
+      <a href="soft-skills.html">Soft Skills</a>
+    </nav>
+
+    <section class="panel glass">
+      <div class="grid-2">
+        <article class="card">
+          <h2>Resume Upload & Parsing</h2>
+          <form id="resumeForm">
+            <label>Upload Resume (PDF / DOC / TXT)
+              <input type="file" id="resumeFile" accept=".pdf,.doc,.docx,.txt" />
+            </label>
+            <label>Or paste resume text
+              <textarea id="resumeText" rows="7" placeholder="Paste resume content here..."></textarea>
+            </label>
+            <button type="submit">Extract Skills</button>
+          </form>
+          <p class="msg" id="resumeMsg"></p>
+        </article>
+
+        <article class="card">
+          <h2>Job Role Requirements</h2>
+          <label>Select Target Role
+            <select id="roleSelect"></select>
+          </label>
+          <div id="roleSkills" class="chips"></div>
+          <div class="inline-actions">
+            <button id="gotoRoadmapBtn" type="button">Go To Roadmap Page</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="grid-3 hidden" id="analysisResults">
+        <article class="card">
+          <h2>Extracted Profile</h2>
+          <div id="extractedData"></div>
+        </article>
+        <article class="card">
+          <h2>Skill Match & Gap</h2>
+          <p><strong>Selected Role:</strong> <span id="selectedRoleLabel">-</span></p>
+          <p><strong>Match Score:</strong> <span id="matchScore">0%</span></p>
+          <p><strong>Matched Skills:</strong></p>
+          <div id="matchedSkills" class="chips"></div>
+          <p><strong>Missing Skills:</strong></p>
+          <div id="missingSkills" class="chips"></div>
+        </article>
+        <article class="card">
+          <h2>ATS Resume Score</h2>
+          <p class="score" id="atsScore">0 / 100</p>
+          <ul id="atsSuggestions"></ul>
+        </article>
+      </div>
+
+      <div class="grid-1">
+        <article class="card">
+          <h2>Latest Analysis Status</h2>
+          <p id="analysisStatus">No resume analyzed yet.</p>
+          <div class="inline-actions hidden" id="adminShortcutWrap">
+            <button id="gotoAdminBtn" type="button">Open Admin Dashboard</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

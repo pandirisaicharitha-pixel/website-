@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Readiness System | Career Recommendations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="career">
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+
+  <header class="topbar glass">
+    <div class="brand">
+      <div class="brand-badge">CRS</div>
+      <div>
+        <h1>Career Readiness System</h1>
+        <p>Career recommendation and mock interview for your selected role</p>
+      </div>
+    </div>
+    <div class="auth-actions" id="authActions"></div>
+  </header>
+
+  <main class="layout">
+    <nav class="page-nav glass">
+      <a href="analysis.html">Skill Extraction</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="career.html" class="active">Career & Interview</a>
+      <a href="gd.html">GD Practice</a>
+      <a href="resume-workshop.html">Resume Workshop</a>
+      <a href="soft-skills.html">Soft Skills</a>
+    </nav>
+
+    <section class="panel glass">
+      <div class="grid-2">
+        <article class="card">
+          <h2>Career Path Options</h2>
+          <div id="careerCards" class="career-list"></div>
+        </article>
+        <article class="card">
+          <h2>Career Snapshot</h2>
+          <p><strong>Selected Role:</strong> <span id="selectedCareerRole">-</span></p>
+          <p><strong>Role Fit:</strong> <span id="selectedCareerFit">0%</span></p>
+          <p><strong>Matched Skills:</strong></p>
+          <div id="careerMatchedSkills" class="chips"></div>
+          <p><strong>Missing Skills:</strong></p>
+          <div id="careerMissingSkills" class="chips"></div>
+          <p class="msg" id="speechMsg"></p>
+        </article>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <div class="section-title-row">
+            <h2>AI Mock Interview Q&A</h2>
+            <button id="voiceAssistBtn" type="button" class="icon-btn" title="Read career and interview page" aria-label="Read career and interview page">&#128264;</button>
+          </div>
+          <label>Select Role
+            <select id="mockInterviewRole"></select>
+          </label>
+          <label class="qa-label" for="interviewQuestion">Ask any interview question
+            <textarea id="interviewQuestion" class="interview-question" rows="3" placeholder="For example: Explain OOP principles."></textarea>
+          </label>
+          <label>AI Answer
+            <textarea id="interviewAnswer" rows="6" placeholder="Your AI-generated answer will appear here..." readonly></textarea>
+          </label>
+          <div class="speech-actions">
+            <button id="validateAnswerBtn" type="button">Get AI Answer</button>
+            <button id="nextQuestionBtn" type="button">Next Question</button>
+            <button id="stopSpeechBtn" type="button" class="secondary-btn">Stop Voice</button>
+          </div>
+          <p class="msg" id="interviewMsg"></p>
+          <div id="interviewFeedbackCard" class="interview-feedback-card hidden">
+            <p id="interviewFeedbackStatus" class="interview-feedback-status"></p>
+            <p id="interviewCorrectAnswer" class="interview-feedback-answer"></p>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Interview Context</h2>
+          <p><strong>Target Role:</strong> <span id="summaryRole">-</span></p>
+          <p><strong>Match Score:</strong> <span id="matchScore">0%</span></p>
+          <p><strong>ATS Score:</strong> <span id="atsScore">0 / 100</span></p>
+          <p><strong>Missing Skills:</strong></p>
+          <div id="missingSkills" class="chips"></div>
+          <ul id="atsSuggestions"></ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

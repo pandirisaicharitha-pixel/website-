@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Readiness System | Resume-Building Workshop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="resume-workshop">
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+
+  <header class="topbar glass">
+    <div class="brand">
+      <div class="brand-badge">CRS</div>
+      <div>
+        <h1>Career Readiness System</h1>
+        <p>Resume-building workshop with templates and improvement guidance</p>
+      </div>
+    </div>
+    <div class="auth-actions" id="authActions"></div>
+  </header>
+
+  <main class="layout">
+    <nav class="page-nav glass">
+      <a href="analysis.html">Skill Extraction</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="career.html">Career & Interview</a>
+      <a href="gd.html">GD Practice</a>
+      <a href="resume-workshop.html" class="active">Resume Workshop</a>
+      <a href="soft-skills.html">Soft Skills</a>
+    </nav>
+
+    <section class="panel glass">
+      <div class="grid-2">
+        <article class="card">
+          <h2>Resume Builder Form</h2>
+          <form id="resumeWorkshopForm" class="grid-1 workshop-form">
+            <label>Template Design
+              <select id="resumeTemplate">
+                <option value="modern">Modern</option>
+                <option value="classic">Classic</option>
+                <option value="compact">Compact</option>
+              </select>
+            </label>
+            <label>Full Name
+              <input type="text" id="resumeName" placeholder="Your full name" />
+            </label>
+            <label>Professional Summary
+              <textarea id="resumeSummary" rows="4" placeholder="Write a short summary aligned to your target role..."></textarea>
+            </label>
+            <label>Education
+              <textarea id="resumeEducation" rows="4" placeholder="Degree, institution, year"></textarea>
+            </label>
+            <label>Skills
+              <textarea id="resumeSkillsInput" rows="4" placeholder="JavaScript, React, Node.js, SQL"></textarea>
+            </label>
+            <label>Projects
+              <textarea id="resumeProjects" rows="6" placeholder="Project name, what you built, tech stack, and measurable outcome"></textarea>
+            </label>
+            <label>Experience
+              <textarea id="resumeExperienceInput" rows="5" placeholder="Role, company, responsibilities, impact"></textarea>
+            </label>
+            <label>Certificates
+              <textarea id="resumeCertificates" rows="4" placeholder="AWS Cloud Practitioner, Coursera ML, NPTEL..."></textarea>
+            </label>
+            <div class="speech-actions">
+              <button type="button" id="generateResumeBtn">Generate Resume Preview</button>
+              <button type="button" id="exportResumeBtn">Export PDF</button>
+            </div>
+          </form>
+        </article>
+        <article class="card">
+          <h2>Template & AI Suggestions</h2>
+          <div class="template-block">
+            <p><strong>Selected Role</strong>: <span id="resumeWorkshopRole">No active analysis</span></p>
+            <p><strong>Template Goal</strong>: Keep sections clean, role-aligned, and achievement-focused.</p>
+            <p><strong>Keyword Optimization</strong>: Add target-role keywords naturally across summary, skills, and projects.</p>
+            <p><strong>Grammar Reminder</strong>: Use action verbs and complete sentences with punctuation.</p>
+          </div>
+          <ul id="resumeSuggestions">
+            <li>Generate the preview to get role-based suggestions.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <h2>Resume Preview</h2>
+          <div id="resumePreview" class="resume-preview template-modern">
+            <p class="chat-empty">Fill the form and click "Generate Resume Preview".</p>
+          </div>
+          <p class="msg" id="resumeWorkshopMsg"></p>
+        </article>
+        <article class="card">
+          <h2>Improvement Examples</h2>
+          <div class="template-block">
+            <p><strong>Weak</strong>: Worked on project</p>
+            <p><strong>Improved</strong>: Developed a machine learning model that improved prediction accuracy by 14%.</p>
+            <p><strong>Weak</strong>: Responsible for frontend</p>
+            <p><strong>Improved</strong>: Built responsive React interfaces that reduced page load time and improved usability.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

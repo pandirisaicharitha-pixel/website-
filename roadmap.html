@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Readiness System | Personalized Roadmap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="roadmap">
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+
+  <header class="topbar glass">
+    <div class="brand">
+      <div class="brand-badge">CRS</div>
+      <div>
+        <h1>Career Readiness System</h1>
+        <p>Personalized learning roadmap and guidance</p>
+      </div>
+    </div>
+    <div class="auth-actions" id="authActions"></div>
+  </header>
+
+  <main class="layout">
+    <nav class="page-nav glass">
+      <a href="analysis.html">Skill Extraction</a>
+      <a href="roadmap.html" class="active">Roadmap</a>
+      <a href="career.html">Career & Interview</a>
+      <a href="gd.html">GD Practice</a>
+      <a href="resume-workshop.html">Resume Workshop</a>
+      <a href="soft-skills.html">Soft Skills</a>
+    </nav>
+
+    <section class="panel glass">
+      <div class="grid-2">
+        <article class="card">
+          <h2>Personalized Learning Roadmap</h2>
+          <ol id="roadmap"></ol>
+          <div class="inline-actions">
+            <button id="gotoCareerBtn" type="button">Go To Career & Interview Page</button>
+          </div>
+        </article>
+        <article class="card">
+          <h2>Skill Demand Analyzer</h2>
+          <div id="demandSkills" class="chips"></div>
+        </article>
+      </div>
+
+      <div class="grid-1">
+        <article class="card">
+          <h2>Analysis Summary</h2>
+          <p><strong>Target Role:</strong> <span id="summaryRole">-</span></p>
+          <p><strong>Match Score:</strong> <span id="matchScore">0%</span></p>
+          <p><strong>ATS Score:</strong> <span id="atsScore">0 / 100</span></p>
+          <p><strong>Missing Skills:</strong></p>
+          <div id="missingSkills" class="chips"></div>
+          <ul id="atsSuggestions"></ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
